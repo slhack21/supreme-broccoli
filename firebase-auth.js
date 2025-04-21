@@ -4,12 +4,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebas
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB1VOg4exTYK8iDGxSx4qw3qausD3CC0rk",
-  authDomain: "krasley-29f4b.firebaseapp.com",
-  projectId: "krasley-29f4b",
-  storageBucket: "krasley-29f4b.appspot.com",
-  messagingSenderId: "485818444667",
-  appId: "1:485818444667:web:ed1683f02c0e36b62c2bde",
+  apiKey: "AIzaSyBmcp1ZXvS2nLjAa_QkmyDgWvGQqxrZDjw",
+  authDomain: "krasley-71e71.firebaseapp.com",
+  projectId: "krasley-71e71",
+  storageBucket:
+"krasley-71e71.firebasestorage.app",
+  messagingSenderId: "769651122724",
+  appId: "1:769651122724:web:2fa1ad570a68f0b1746eb1",
   measurementId: "G-2LPKT40YZM"
 };
 
