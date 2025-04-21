@@ -1,0 +1,446 @@
+:root {
+    --primary-color: #0a0f2e; /* Bleu nuit profond */
+    --secondary-color: #1a2a6c; /* Bleu plus clair */
+    --accent-color-1: #f44336; /* Rouge/Orange vif */
+    --accent-color-2: #00bcd4; /* Cyan vif */
+    --text-color: #e0e0e0;
+    --heading-font: 'Orbitron', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--accent-color-2);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+     letter-spacing: 1px;
+}
+
+h2 {
+    border-bottom: 2px solid var(--accent-color-1);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+a {
+    color: var(--accent-color-2);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color-1);
+}
+
+header {
+    background-color: rgba(10, 15, 46, 0.8); /* var(--primary-color) avec transparence */
+    padding: 1rem 5%;
+    position: fixed;
+    top: 5px; /* Décalé vers le bas pour laisser place à la barre de progression */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Effet de flou */
+    border-bottom: 1px solid rgba(0, 200, 255, 0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    z-index: 1002; /* Ensure logo stays above mobile menu background */
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #fff; /* Titre principal en blanc */
+    text-shadow: 0 0 5px var(--accent-color-2), 0 0 10px var(--accent-color-2);
+}
+.logo-svg {
+     width: 40px;
+     height: 40px;
+     margin-right: 10px; /* Espace entre SVG et texte */
+     animation: rotateLogo 10s linear infinite;
+}
+
+nav {
+    display: flex; /* Keep nav items horizontally aligned on desktop */
+    align-items: center; /* Align toggle button vertically */
+}
+
+.nav-links {
+    display: flex; /* Use flex for the links container */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    position: relative;
+     color: var(--text-color);
+}
+nav ul li a::after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 2px;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     background-color: var(--accent-color-1);
+     transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.login-button {
+    background-color: var(--accent-color-1);
+    color: #fff;
+    padding: 0.5rem 1rem; /* Add padding */
+    border-radius: 4px;
+    margin-left: 1rem; /* Add some space from other links */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a.login-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+    color: #fff; /* Keep text white */
+}
+
+nav ul li a.login-button::after {
+    display: none; /* Don't show the underline animation for the button */
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-left: 1rem; /* Space between links and button if links were visible */
+    z-index: 1002; /* Ensure button is clickable above other elements */
+}
+
+.menu-toggle svg {
+    display: block; /* Prevents extra space below SVG */
+}
+
+main {
+    padding-top: 80px; /* Adjust initial padding based on new structure */
+}
+
+section {
+    padding: 4rem 5%;
+    margin-bottom: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin: 2rem 5%; /* Ajoute une marge latérale */
+}
+
+#hero {
+    background: linear-gradient(rgba(10, 15, 46, 0.7), rgba(26, 42, 108, 0.8)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%2300bcd4' fill-opacity='0.1'%3E%3Cpath d='M11 18l14 4-14 4zm41 5l14 4-14 4zm41 5l14 4-14 4zM11 58l14 4-14 4zm41 5l14 4-14 4zm41 5l14 4-14 4z'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: cover, auto;
+    background-position: center;
+    text-align: center;
+    padding: 6rem 5%;
+    color: #fff;
+    margin-top: -2rem; /* Compense la marge de la première section */
+     margin-left: 0;
+     margin-right: 0;
+     border-radius: 0;
+     box-shadow: none;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 0 0 10px var(--accent-color-2), 0 0 20px var(--accent-color-2);
+    border: none;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.game-list, .announcement-list {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.game-item, .announcement-item {
+    background-color: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-item:hover, .announcement-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 200, 255, 0.2);
+}
+
+.game-item h3, .announcement-item h3 {
+    color: var(--accent-color-1);
+    margin-bottom: 0.5rem;
+}
+
+.placeholder-img {
+    height: 150px;
+    background-color: #2a3b7c; /* Slightly lighter than secondary */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(224, 224, 224, 0.5);
+    font-style: italic;
+    margin-top: 1rem;
+}
+.placeholder-img::before {
+     content: 'Image Bientôt';
+}
+
+.announcement-item .date {
+    display: block;
+    font-size: 0.8rem;
+    color: #aaa;
+    margin-top: 1rem;
+    text-align: right;
+}
+
+.founders {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* Pour les petits écrans */
+}
+
+.founder {
+    text-align: center;
+    margin: 1rem;
+}
+
+.founder h3 {
+     margin-top: 0.5rem;
+     margin-bottom: 0;
+     color: var(--text-color); /* Noms en blanc */
+     font-family: var(--body-font); /* Utilise la police body */
+     text-transform: none; /* Pas de majuscules */
+     font-weight: bold;
+}
+
+.avatar {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     margin-bottom: 0.5rem;
+     border: 3px solid var(--accent-color-2);
+     background-color: var(--primary-color); /* Fond avatar */
+}
+
+.avatar text {
+    font-family: var(--heading-font);
+    fill: var(--accent-color-2); /* Couleur initiale lettre */
+    font-weight: bold;
+}
+
+#contact {
+    text-align: center;
+}
+
+#contact a {
+     display: inline-block;
+     margin-top: 1rem;
+     padding: 0.8rem 1.5rem;
+     background-color: var(--accent-color-1);
+     color: #fff;
+     border-radius: 5px;
+     font-weight: bold;
+     transition: background-color 0.3s ease;
+}
+
+#contact a:hover {
+    background-color: #d32f2f; /* Rouge plus foncé */
+     color: #fff;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 5%;
+    margin-top: 2rem;
+    background-color: var(--primary-color);
+    border-top: 1px solid rgba(0, 200, 255, 0.2);
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Scroll Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 5px; /* Hauteur de la barre de progression */
+    background-color: rgba(26, 42, 108, 0.5); /* Fond légèrement visible */
+    position: fixed; /* Fixé en haut */
+    top: 0; /* Aligné tout en haut */
+    left: 0;
+    z-index: 1001; /* Above header background but below toggle/logo */
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color-2), var(--accent-color-1)); /* Dégradé pour la barre */
+    width: 0%; /* Commence à 0 */
+    transition: width 0.3s ease;
+}
+
+@keyframes rotateLogo {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .progress-container {
+        height: 4px;
+    }
+    header {
+        flex-direction: row; /* Keep logo and nav/toggle on the same row */
+        justify-content: space-between; /* Space out logo and nav controls */
+        padding: 0.5rem 3%; /* Adjust padding */
+        top: 4px; /* Adjusted for the progress bar */
+        align-items: center; /* Vertically center items */
+    }
+     .logo h1 {
+         font-size: 1.5rem;
+     }
+     .logo-svg {
+         width: 30px;
+         height: 30px;
+     }
+
+    nav {
+        margin-top: 0; /* Remove top margin */
+        width: auto; /* Allow nav to size based on content (the button) */
+    }
+
+    /* Hide desktop nav links */
+    .nav-links {
+        display: none; /* Hide links container by default */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        width: 100%;
+        background-color: rgba(10, 15, 46, 0.95); /* Semi-transparent background */
+        backdrop-filter: blur(5px);
+        padding: 1rem 0;
+        border-top: 1px solid rgba(0, 200, 255, 0.2);
+         flex-direction: column; /* Stack links vertically */
+         align-items: center; /* Center links horizontally */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show the nav links when active */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack list items vertically */
+        width: 100%;
+        align-items: center; /* Center items in the column */
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 1rem; /* Space between vertical links */
+         width: 100%; /* Make list items take full width */
+         text-align: center; /* Center text within list items */
+    }
+     nav ul li:last-child {
+         margin-bottom: 0; /* Remove margin from last item */
+     }
+     nav ul li a {
+         font-size: 1rem; /* Slightly larger font for mobile nav */
+         padding: 0.5rem 1rem;
+         display: block; /* Make link take full width of li */
+         width: 100%;
+     }
+     nav ul li a::after {
+         /* Optional: adjust or remove underline for mobile */
+         display: none; /* Hide underline on mobile */
+     }
+    nav ul li a.login-button {
+        display: inline-block; /* Prevent full width */
+        width: auto; /* Auto width */
+        margin-top: 0.5rem; /* Add space above in mobile menu */
+        margin-left: 0; /* Reset margin-left for centered alignment */
+        background-color: var(--accent-color-1); /* Ensure background color is applied */
+        color: #fff; /* Ensure text color is white */
+    }
+
+    /* Show the menu toggle button */
+    .menu-toggle {
+        display: block; /* Show burger button */
+    }
+
+    main {
+        padding-top: 68px; /* Adjusted padding-top: header height (approx 60px) + progress bar (4px) + small buffer (4px) */
+    }
+
+    section {
+         padding: 3rem 3%;
+         margin: 1.5rem 3%;
+    }
+
+    #hero h2 {
+        font-size: 2.2rem;
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .game-list, .announcement-list {
+        grid-template-columns: 1fr; /* Une colonne sur mobile */
+    }
+}
+
+@media (max-width: 480px) {
+     .logo h1 {
+         font-size: 1.3rem;
+     }
+    /* No change needed for nav ul direction here, already column */
+    /* Adjustments from 768px are likely sufficient */
+}

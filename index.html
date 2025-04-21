@@ -1,0 +1,112 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRASLEY STUDIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="progress-container">
+            <div class="progress-bar" id="scrollProgressBar"></div>
+        </div>
+        <div class="logo">
+            <h1>KRASLEY STUDIO</h1>
+            <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:rgb(255,0,150);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgb(0,200,255);stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <path fill="url(#grad1)" d="M10 10 L50 90 L90 10 Z M30 10 L50 50 L70 10 Z" />
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#grad1)" stroke-width="3"/>
+            </svg>
+        </div>
+        <nav>
+            <div class="nav-links"> 
+                <ul>
+                    <li><a href="#games">Jeux</a></li>
+                    <li><a href="#announcements">Annonces</a></li>
+                    <li><a href="#about">À Propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#login" class="login-button">Login</a></li>
+                </ul>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <svg viewBox="0 0 100 80" width="30" height="30" fill="var(--accent-color-2)">
+                    <rect width="100" height="15" rx="8"></rect>
+                    <rect y="30" width="100" height="15" rx="8"></rect>
+                    <rect y="60" width="100" height="15" rx="8"></rect>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Bienvenue chez KRASLEY STUDIO</h2>
+            <p>Créateurs d'expériences vidéoludiques uniques.</p>
+        </section>
+
+        <section id="games">
+            <h2>Nos Jeux</h2>
+            <div class="game-list">
+                <!-- Les jeux seront ajoutés ici -->
+                <article class="game-item placeholder">
+                    <h3>Prochainement...</h3>
+                    <p>Notre premier jeu est en cours de développement !</p>
+                     <div class="placeholder-img"></div>
+                </article>
+            </div>
+        </section>
+
+        <section id="announcements">
+            <h2>Annonces</h2>
+            <div class="announcement-list">
+                <!-- Les annonces seront ajoutées ici -->
+                 <article class="announcement-item">
+                    <h3>Lancement du studio !</h3>
+                    <p>KRASLEY STUDIO ouvre officiellement ses portes. Préparez-vous pour des aventures incroyables !</p>
+                    <span class="date">Aujourd'hui</span>
+                 </article>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>À Propos de Nous</h2>
+            <p>KRASLEY STUDIO est né de la passion pour le jeu vidéo de ses deux fondateurs, <strong>Sleytag</strong> et <strong>Kratos</strong>.</p>
+            <p>Notre mission est de créer des jeux innovants et captivants qui marquent les esprits.</p>
+            <div class="founders">
+                 <div class="founder">
+                    <svg class="avatar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="#ccc"/><text x="50%" y="60%" text-anchor="middle" font-size="40" fill="#333">S</text></svg>
+                    <h3>Sleytag</h3>
+                 </div>
+                 <div class="founder">
+                    <svg class="avatar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="45" fill="#ccc"/><text x="50%" y="60%" text-anchor="middle" font-size="40" fill="#333">K</text></svg>
+                    <h3>Kratos</h3>
+                 </div>
+            </div>
+        </section>
+
+        <section id="contact">
+             <h2>Contact</h2>
+             <p>Pour toute question ou proposition, contactez-nous :</p>
+             <a href="/cdn-cgi/l/email-protection#bcdfd3d2c8dddfc8fcd7ceddcfd0d9c5cfc8c9d8d5d392dfd3d1"><span class="__cf_email__" data-cfemail="294a46475d484a5d69425b485a454c505a5d5c4d4046074a4644">[email&#160;protected]</span></a>
+             <!-- Potentiellement ajouter des liens réseaux sociaux -->
+        </section>
+        <section id="login">
+            <!-- Login section content will go here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 KRASLEY STUDIO. Tous droits réservés.</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+</body>
+</html>
